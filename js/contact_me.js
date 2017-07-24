@@ -20,7 +20,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "www.fedegon.tk/contact_me.php",
+                url: "http://www.fedegon.tk/contact_me.php",
                 type: "POST",
                 data: {
                     name: name,
