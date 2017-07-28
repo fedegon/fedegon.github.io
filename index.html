@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title data-translatable>Federico Gonzalez - Desarrollador Web // Federico Gonzalez - Web Developer</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -71,15 +71,13 @@
                         <a href="#contact">Contact</a>
                     </li>
 
-                    <li class="page-scroll">
-                        <a href="#">
+                    <li id="selectlang" class="page-scroll">
                         <select class="selectpicker" data-width="fit">
                         <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English
                         </option>
                         <option  data-content='<span class="flag-icon flag-icon-es"></span> Español'>Español
                         </option>
                         </select>
-                        </a>
                     </li>
 
                 </ul>
@@ -563,6 +561,21 @@
     <!-- Bar lang -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js'></script>
     <script src="js/lang.js"></script>
+
+    <script src="js/dom-i18n.js"></script>
+
+    <script>
+
+      var i18n = domI18n({
+        selector: '[data-translatable]',
+        separator: ' // ',
+        languages: ['es', 'en'],
+        defaultLanguage: 'es'
+      });
+
+      i18n.changeLanguage('en');
+
+    </script>
 
 </body>
 

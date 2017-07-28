@@ -22,3 +22,7 @@
 	text-transform: uppercase;
 	border-color: transparent;
 }
+
+#selectlang {
+	padding-top: 8px;
+}
