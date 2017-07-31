@@ -49,7 +49,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <a data-translatable class="navbar-brand" href="#page-top">Comienza // Start Bootstrap</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,10 +72,10 @@
                     </li>
 
                     <li id="selectlang" class="page-scroll">
-                        <select class="selectpicker" data-width="fit">
-                        <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English
+                        <select id="selectLenguaje" onchange="cambiarLenguaje()" class="selectpicker" data-width="fit">
+                        <option id="opcionEn" data-content='<span class="flag-icon flag-icon-us"></span> English'>English
                         </option>
-                        <option  data-content='<span class="flag-icon flag-icon-es"></span> Español'>Español
+                        <option id="opcionEs" data-content='<span class="flag-icon flag-icon-es"></span> Español'>Español
                         </option>
                         </select>
                     </li>
@@ -573,7 +573,27 @@
         defaultLanguage: 'es'
       });
 
-      i18n.changeLanguage('en');
+      var selectedLang = (location.href.substr(location.href.lastIndexOf('#') + 1));
+      if (selectedLang == 'en') {
+        i18n.changeLanguage('en');
+        document.getElementById("opcionEs").selected = false;
+        document.getElementById("opcionEn").selected = true;
+      } 
+      else {
+        i18n.changeLanguage('es');
+        document.getElementById("opcionEn").selected = false;
+        document.getElementById("opcionEs").selected = true;
+      }
+
+      function cambiarLenguaje() {
+       var x = document.getElementById("selectLenguaje").value;
+       if (x == "English") {
+         i18n.changeLanguage('en');
+       } 
+       else {
+         i18n.changeLanguage('es');
+       }
+      }
 
     </script>
 
